@@ -2,7 +2,7 @@
 
 ### Start the servers:
 ```shell
-docker compose up -d build
+docker compose up -d --build
 ```
 
 ### Check the logs:
