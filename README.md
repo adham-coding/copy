@@ -25,3 +25,15 @@ docker images
 ```shell
 docker image prune -f
 ```
+
+### Enable autostart service always
+```shell
+docker update --restart=always kafka-writer
+docker update --restart=always kafka-reader
+```
+
+### Disable autostart service always
+```shell
+docker update --restart=no kafka-writer
+docker update --restart=no kafka-reader
+```
