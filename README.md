@@ -1,9 +1,27 @@
->>> Serverlarni ishga tushirish:
-sudo docker compose up -d build
+> # Kafka Docker
 
->>> Loglarni tekshirish:
-sudo docker container logs kafka-writer
-sudo docker container logs kafka-reader
+### Start the servers:
+```shell
+docker compose up -d build
+```
 
->>> Serverlarni o'chirish:
-sudo docker compose down
+### Check the logs:
+```shell
+docker container logs kafka-writer
+docker container logs kafka-reader
+```
+
+### Shut down servers:
+```shell
+docker compose down
+```
+
+### View a list of all containers:
+```shell
+docker images
+```
+
+### Cleaning up junk containers that have piled up:
+```shell
+docker image prune -f
+```
