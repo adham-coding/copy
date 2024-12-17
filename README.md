@@ -1,3 +1,4 @@
+```
 async updateOrCreate({ data = [] }: RegionListDto) {
   data.forEach((item) => {
     if (item.id) checkInvalidFields(RegionUpdateDto, item);
@@ -16,3 +17,4 @@ async updateOrCreate({ data = [] }: RegionListDto) {
     }),
   );
 }
+```
