@@ -1,5 +1,5 @@
 ```
-async updateOrCreate({ data = [] }: RegionListDto) {
+async updateOrCreate2({ data = [] }: RegionListDto) {
   data.forEach((item) => {
     if (item.id) checkInvalidFields(RegionUpdateDto, item);
     else checkInvalidFields(RegionCreateDto, item);
@@ -8,10 +8,9 @@ async updateOrCreate({ data = [] }: RegionListDto) {
   return await Promise.all(
     data.map(({ id, ...others }) => {
       if (id)
-        return this.prismaService.regions.upsert({
+        return this.prismaService.regions.update({
           where: { id },
-          update: others,
-          create: others,
+          data: others,
         });
       else return this.prismaService.regions.create({ data: others });
     }),
